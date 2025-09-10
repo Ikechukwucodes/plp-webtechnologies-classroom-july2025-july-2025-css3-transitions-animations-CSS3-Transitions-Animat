@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Animations & JavaScript Functions Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Bringing Web Pages to Life with CSS & JavaScript</h1>
+    <section id="part1">
+        <h2>Part 1: CSS3 Transitions and Animations</h2>
+        <button class="animated-btn">Hover Me!</button>
+        <div class="fade-box">I fade in and out</div>
+        <div class="slide-box">I slide in</div>
+    </section>
+    <section id="part2">
+        <h2>Part 2: JavaScript Functions</h2>
+        <button onclick="showScopeDemo()">Show Scope Demo</button>
+        <div id="scope-result"></div>
+        <button onclick="calculateAndAnimate(5, 3)">Calculate & Animate</button>
+        <div id="calc-result"></div>
+    </section>
+    <section id="part3">
+        <h2>Part 3: Combining CSS & JavaScript</h2>
+        <button id="animate-box-btn">Animate the Box!</button>
+        <div id="js-animated-box" class="box">Watch me animate!</div>
+        <button id="flip-card-btn">Flip Card</button>
+        <div class="card" id="flip-card">
+            <div class="card-inner">
+                <div class="card-front">Front</div>
+                <div class="card-back">Back</div>
+            </div>
+        </div>
+        <button id="show-modal-btn">Show Modal</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <p>This is a modal popup!</p>
+            </div>
+        </div>
+        <hr>
+        <button id="theme-toggle">Toggle Dark/Light Mode</button>
+        <div class="photo-gallery">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="animated-photo" alt="Nature 1">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="animated-photo" alt="Nature 2">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="animated-photo" alt="Nature 3">
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/* Part 1: CSS3 Transitions and Animations */
+.animated-btn {
+    background: #4f8cff;
+    color: #fff;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1.2em;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+.animated-btn:hover {
+    background: #2d6cdf;
+    transform: scale(1.1) rotate(-3deg);
+}
+.fade-box {
+    width: 200px;
+    height: 60px;
+    background: #ffe066;
+    margin: 1em 0;
+    opacity: 1;
+    animation: fadeInOut 3s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+@keyframes fadeInOut {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+.slide-box {
+    width: 200px;
+    height: 60px;
+    background: #ff6f61;
+    margin: 1em 0;
+    transform: translateX(-100px);
+    animation: slideIn 2s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+@keyframes slideIn {
+    to { transform: translateX(0); }
+}
+/* Part 3: JS-triggered Animations */
+.box {
+    width: 150px;
+    height: 60px;
+    background: #6fffbf;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: transform 0.5s, background 0.5s;
+}
+.box.animated {
+    transform: scale(1.2) rotate(10deg);
+    background: #3ecf8e;
+}
+/* Card Flip Animation */
+.card {
+    width: 120px;
+    height: 80px;
+    perspective: 600px;
+    margin: 1em 0;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    border-radius: 8px;
+}
+.card-front {
+    background: #f7b731;
+}
+.card-back {
+    background: #3867d6;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+/* Modal Animation */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    animation: fadeInModal 0.5s;
+}
+.modal.show {
+    display: flex;
+}
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    background: #fff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    animation: slideUp 0.5s;
+}
+@keyframes slideUp {
+    from { transform: translateY(100px); }
+    to { transform: translateY(0); }
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Dark/Light Mode Styles */
+body.light-mode {
+    background: #f5f6fa;
+    color: #222;
+    transition: background 0.5s, color 0.5s;
+}
+body.dark-mode {
+    background: #222;
+    color: #f5f6fa;
+    transition: background 0.5s, color 0.5s;
+}
+body.dark-mode .modal-content {
+    background: #333;
+    color: #f5f6fa;
+}
+body.dark-mode .card-front {
+    background: #444;
+    color: #f5f6fa;
+}
+body.dark-mode .card-back {
+    background: #222;
+    color: #fff;
+}
+
+/* Animated Photos */
+.photo-gallery {
+    display: flex;
+    gap: 1em;
+    margin: 2em 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.animated-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    animation: floatPhoto 3s ease-in-out infinite;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.animated-photo:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    transform: scale(1.08) rotate(-2deg);
+}
+@keyframes floatPhoto {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px) scale(1.04); }
+}
